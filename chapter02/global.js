@@ -8,12 +8,16 @@
 //window.test();
 
 // runing code tarminal
-const a = 10;
-console.log(global.a);
+// const a = 10;
+// console.log(global.a);
 
-function test() {
-  console.log('Hello');
-}
+// function test() {
+//   console.log('Hello');
+// }
 // global.test();
 
-console.log(module);
+
+// can't use import. i can use require
+const { add } = require('./math');
+
+console.log(add(3, 2));
