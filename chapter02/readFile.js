@@ -7,4 +7,4 @@ fs.readFile('./test.json', (err, data) => {
 
   const obj = JSON.parse(data);
   console.log(obj);
-})
+});
