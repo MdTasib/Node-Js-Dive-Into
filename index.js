@@ -9,8 +9,9 @@ app.use('/user', userRouter);
 app.use('/posts', postRouter);
 
 // dynamic route
-app.get('/product/:id', (req, res) => {
-  res.send('Product id page');
+app.get('/product/:productId/reviews/:reviewId', (req, res) => {
+  const id = req.params;
+  res.send(`Product id - ${id.productId} || Product reviews id - ${id.reviewId}`);
 });
 
 app.get('/', (req, res) => {
