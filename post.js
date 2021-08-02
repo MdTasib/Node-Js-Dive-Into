@@ -1,20 +1,20 @@
 const postRoute = require('express').Router();
+const {
+  singlePost,
+  updatePost
+} = require('./postController');
 
 postRoute.get('/', (req, res) => {
   // query string
   console.log(req.query);
-  const { catagory, page } = req.query;
+  // const { catagory, page } = req.query;
 
   res.send('All posts');
 });
 
-postRoute.post('/:postId', (req, res) => {
-  res.send('Create a new post - PostId: ' + req.params.postId);
-})
+postRoute.post('/:postId', singlePost);
 
-postRoute.put('/', (req, res) => {
-  res.send('update a new post');
-})
+postRoute.put('/', updatePost);
 
 postRoute.delete('/', (req, res) => {
   res.send('delete a new post');
