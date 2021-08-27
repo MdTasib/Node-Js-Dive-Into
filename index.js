@@ -1,8 +1,13 @@
 const express = require('express');
+
+const contactRoutes = require('./contactRoutes');
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('<h1>A simple project.</h1>');
+app.use('/contacts', contactRoutes);
+
+app.get('*', (req, res) => {
+  res.send('<h1>Please Use The Correct Routes</h1>');
 });
 
 app.listen(4000, () => {
